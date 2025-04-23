@@ -1,88 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>whitepace-saas</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
     <style>
-        nav {
-            background-color: #333;
-            font-family: Arial, sans-serif;
-        }
-        .nav-menu {
-            list-style-type: none;
+        /* Basic reset */
+        * {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            box-sizing: border-box;
         }
-        .nav-menu > li {
-            float: left;
+
+        body {
+            font-family: Arial, sans-serif;
         }
-        .nav-menu li a, .dropbtn {
-            display: inline-block;
+
+        header {
+            background-color: #333;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
         }
-        .nav-menu li a:hover, .dropdown:hover .dropbtn {
-            background-color: #111;
+
+        /* Logo */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
         }
-        .dropdown {
+
+        /* Navigation */
+        nav {
+            flex-grow: 1;
+            margin-left: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
             position: relative;
-            display: inline-block;
+            margin-right: 30px;
         }
+
+        nav ul li a, nav ul li button {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            display: inline-block;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        nav ul li a:hover, nav ul li button:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            cursor: pointer;
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            background-color: #444;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
         }
-        .dropdown-content li {
-            float: none;
-        }
-        .dropdown-content li a {
-            color: black;
-            padding: 12px 16px;
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
             text-decoration: none;
             display: block;
-            text-align: left;
         }
-        .dropdown-content li a:hover {
-            background-color: #ddd;
+
+        .dropdown-content a:hover {
+            background-color: #666;
         }
+
+        /* Show dropdown on hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        /* Clear floats */
-        .nav-menu::after {
-            content: "";
-            clear: both;
-            display: table;
+
+        /* Last menu item with buttons */
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-buttons button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #0056b3;
         }
     </style>
-    
 </head>
 <body>
-    <nav>
-        <ul class="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Services</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <li><a href="#">Service 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Services &#x25BE;</a>
+                    <div class="dropdown-content">
+                        <a href="#">Service 1</a>
+                        <a href="#">Service 2</a>
+                        <a href="#">Service 3</a>
+                    </div>
+                </li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="nav-buttons">
+                    <button type="button">Sign Up</button>
+                    <button type="button">Login</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
